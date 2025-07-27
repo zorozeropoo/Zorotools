@@ -27,7 +27,6 @@
     }
 
     html, body {
-      height: 100%;
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -48,26 +47,34 @@
       filter: blur(40px);
     }
 
-    .container {
-      position: relative;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
-      z-index: 1;
-    }
-
-    .toggle-btn {
+    .top-buttons {
       position: fixed;
       top: 1rem;
-      right: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      z-index: 10;
+    }
+
+    .top-buttons a, .top-buttons button {
       background: var(--accent);
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 8px;
-      cursor: pointer;
       color: #000;
       font-weight: 600;
-      z-index: 10;
+      text-decoration: none;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+      z-index: 1;
     }
 
     header {
@@ -85,13 +92,18 @@
       font-size: 1.7rem;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
     .card {
       background-color: var(--card-bg);
       padding: 1rem 1.2rem;
       border-radius: 14px;
       box-shadow: 0 0 20px #00000060;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      margin-bottom: 1.2rem;
     }
 
     .card:hover {
@@ -100,7 +112,7 @@
     }
 
     .card h2 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
@@ -112,7 +124,7 @@
     }
 
     .card p, .card li {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       line-height: 1.4;
     }
 
@@ -142,6 +154,10 @@
       margin-bottom: 0.4rem;
     }
 
+    .full-width-card {
+      grid-column: 1 / -1;
+    }
+
     footer {
       text-align: center;
       font-size: 0.8rem;
@@ -160,7 +176,10 @@
 </head>
 <body>
 
-  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <div class="top-buttons">
+    <a href="https://www.youtube.com/@tit-ty69" target="_blank">YouTube</a>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </div>
 
   <div class="container">
     <header>
@@ -169,25 +188,39 @@
       <p style="font-size: 0.95rem;">The ultimate toolkit for all your needs.</p>
     </header>
 
-    <div class="card">
-      <h2><i class="fas fa-info-circle"></i> What is ZorosTool?</h2>
-      <p>ZorosTool is a multifunctional utility app designed to boost productivity, enhance control, and simplify your digital tasks.</p>
-    </div>
+    <div class="grid">
 
-    <div class="card">
-      <h2><i class="fas fa-download"></i> Download ZorosTool</h2>
-      <p>Click below to download the latest version of ZorosTool.</p>
-      <a class="download-btn" href="https://github.com/zorozeropoo/Zorotools/raw/refs/heads/main/ZoroTool.exe" target="_blank">Download Now</a>
-    </div>
+      <div class="card full-width-card">
+        <h2><i class="fas fa-download"></i> Download ZorosTool</h2>
+        <p>Click below to download the latest version of ZorosTool instantly.</p>
+        <a class="download-btn" href="https://github.com/zorozeropoo/Zorotools/raw/refs/heads/main/ZoroTool.exe" download>Download Now</a>
+      </div>
 
-    <div class="card">
-      <h2><i class="fas fa-star"></i> Features</h2>
-      <ul>
-        <li><i class="fas fa-bolt"></i> Lightweight & fast</li>
-        <li><i class="fas fa-toolbox"></i> Built-in tools and scripts</li>
-        <li><i class="fas fa-adjust"></i> Dark/Light mode toggle</li>
-        <li><i class="fas fa-shield-alt"></i> Secure and safe</li>
-      </ul>
+      <div class="card">
+        <h2><i class="fas fa-info-circle"></i> What is ZorosTool?</h2>
+        <p>ZorosTool is a multifunctional utility app designed to boost productivity, enhance control, and simplify your digital tasks.</p>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-star"></i> Features</h2>
+        <ul>
+          <li><i class="fas fa-bolt"></i> Lightweight & fast</li>
+          <li><i class="fas fa-toolbox"></i> Built-in tools and scripts</li>
+          <li><i class="fas fa-adjust"></i> Dark/Light mode toggle</li>
+          <li><i class="fas fa-shield-alt"></i> Secure and safe</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-fire"></i> Coming Soon</h2>
+        <p>Stay tuned for auto-updating features and new script packs being added in the next version of ZorosTool.</p>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-code"></i> Community Scripts</h2>
+        <p>I'm building a hub where users can share and browse custom scripts and utilities. Stay tuned!</p>
+      </div>
+
     </div>
   </div>
 
